@@ -10,6 +10,7 @@ class CreateShapes < ActiveRecord::Migration[6.0]
       t.integer :stroke_weight
       t.integer :project_id
       t.integer :render_number
+      t.integer :rotation
 
       t.timestamps
     end

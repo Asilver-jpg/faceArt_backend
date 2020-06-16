@@ -1,11 +1,14 @@
 class ProjectsController < ApplicationController
     def index
+        
         projects= Project.all 
         render json: projects, include: [:user,:shapes]
     end
     def new
     end
     def create
+        project=Project.create(project_params)
+        render json: project
     end
     def edit
     end
@@ -19,6 +22,6 @@ class ProjectsController < ApplicationController
     private
 
     def project_params
-        params[:project].permit(:name, :views, :user_id, :date)
+        params.require(:project).permit(:name, :views, :user_id, :date, :project_img)
     end
 end
