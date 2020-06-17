@@ -6,10 +6,10 @@ class ShapesController < ApplicationController
   
     def create
        
-       params[:_json].each do |shape|
+      
         shape= Shape.create(shape_params)
          render json: shape
-       end
+     
            
     end
     def update
