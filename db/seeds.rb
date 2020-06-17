@@ -14,9 +14,9 @@ User.destroy_all()
 
 5.times {User.create(user_name: Faker::Name.first_name, password: "123")}
 User.create(user_name: "Boblin", password:"Goblin")
-20.times { Project.create(name:Faker::Space.unique.constellation, views: 0, date: Date.new(2019, rand(1..12), rand(1..28)), user_id: User.all.sample.id)}
+25.times { Project.create(name:Faker::Space.constellation, views: 0, date: Date.new(2019, rand(1..12), rand(1..28)), user_id: User.all.sample.id)}
 
-200.times do
+270.times do
     randNum= rand(70..250)
     Shape.create(value1: rand(0..450), value2: rand(0..600), value3: randNum, value4: randNum, fill: "(#{rand(0..255)},#{rand(0..255)},#{rand(0..255)})", stroke: "no", stroke_weight:1, project_id: Project.all.sample.id,render_number: 0 , rotation: rand(0...360))
 end
