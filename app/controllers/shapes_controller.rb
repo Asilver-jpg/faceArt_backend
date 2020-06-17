@@ -3,13 +3,24 @@ class ShapesController < ApplicationController
         shapes= Shape.all
         render json: shapes
     end
-  
+    t.integer "value1"
+    t.integer "value2"
+    t.integer "value3"
+    t.integer "value4"
+    t.string "fill"
+    t.string "stroke"
+    t.integer "stroke_weight"
+    t.integer "project_id"
+    t.integer "render_number"
+    t.integer "rotation"
     def create
-       
+       let arr=[]
        params[:_json].each do |shape|
-        shape= Shape.create(shape_params)
-         render json: shape
+        shape= Shape.create({value1: shape[:posX], value2: shape[:posY], value3: shape[:width], value4:shape[:height], 
+            fill: shape[:color], stroke: shape[:stroke], stroke_weight: shape[:strokeWeight], project_id: shape[:projectId],render_number: 0, rotation: shape[:rotation]})
+          
        end
+        render json: shape
            
     end
     def update
