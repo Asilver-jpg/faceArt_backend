@@ -6,9 +6,12 @@ class ShapesController < ApplicationController
 
     def create
         arr=[]
+        
        params[:_json].each do |shape|
         shape= Shape.create({value1: shape[:posX], value2: shape[:posY], value3: shape[:width], value4:shape[:height], 
-            fill: shape[:color], stroke: shape[:stroke], stroke_weight: shape[:strokeWeight], project_id: shape[:projectId],render_number: 0, rotation: shape[:rotation]})
+            fill: shape[:color], stroke: shape[:stroke], stroke_weight: shape[:strokeWeight], project_id: shape[:projectId],render_number: 0, 
+            rotation: shape[:rotation]})
+            
             arr.push(shape)
        end
        
@@ -17,8 +20,9 @@ class ShapesController < ApplicationController
     end
     def update
         shape= Shape.find_by(id: params[:id])
-        shape.update(value1: params[:value1], value2:params[:value2], value3:params[:value3], value4: params[:value4], 
-            stroke: params[:stroke], fill: params[:fill], rotation: params[:rotation], stroke_weight:params[:strokeWeight])
+        shape.update(value1: shape[:posX], value2: shape[:posY], value3: shape[:width], value4:shape[:height], 
+            fill: shape[:color], stroke: shape[:stroke], stroke_weight: shape[:strokeWeight], project_id: shape[:projectId],render_number: 0, 
+            rotation: shape[:rotation])
     end
     def show
     end
