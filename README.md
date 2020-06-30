@@ -1,24 +1,9 @@
-# README
+# FaceMaker Backend
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the backend for [FaceMaker](https://github.com/Asilver-jpg/Face-Maker). 
 
-Things you may want to cover:
+If using with FaceMaker, please run in port 3001. 
 
-* Ruby version
+### ERD
+### MVP
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
